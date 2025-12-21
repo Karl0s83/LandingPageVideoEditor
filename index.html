@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Vídeo - Portfolio Professional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&family=Montserrat:wght@800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="header-container">
+            <a href="#hero" class="logo">
+                EDITOR.<span class="accent">PRO</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#work" class="nav-item">TRABAJOS</a>
+                <a href="#about" class="nav-item">SOBRE MÍ</a>
+                <a href="#contact" class="nav-item">CONTACTO</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn-cta hidden-mobile-xs">LET'S TALK</a>
+                <button class="hamburger" id="menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+        <nav>
+            <a href="#work">TRABAJOS</a>
+            <a href="#about">SOBRE MÍ</a>
+            <a href="#contact">CONTACTO</a>
+            <a href="#contact" class="mobile-cta">LET'S TALK</a>
+        </nav>
+    </div>
+    <main class="snap-container">
+
+        <!-- SECTION 1: HERO + CAROUSEL -->
+        <section id="hero" class="snap-section hero-section">
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    CREATIVIDAD <br /> <span class="gradient-text">EN MOVIMIENTO</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Edición de vídeo profesional que cuenta historias.
+                </p>
+            </div>
+
+            <!-- Carousel -->
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide group">
+                        <img src="./assets/showreel.png" alt="Showreel">
+                        <div class="slide-overlay">
+                            <span>Showreel 2024</span>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide group">
+                        <img src="./assets/music.png" alt="Music Video">
+                        <div class="slide-overlay">
+                            <span>Music Video</span>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide group">
+                        <img src="./assets/commercial.png" alt="Commercial">
+                        <div class="slide-overlay">
+                            <span>Commercial</span>
+                        </div>
+                    </div>
+                </div>
+                <!--Add more slides if needed-->
+
+                <!-- Custom Controls -->
+                <button id="prev-btn" class="carousel-btn prev" aria-label="Previous">❮</button>
+                <button id="next-btn" class="carousel-btn next" aria-label="Next">❯</button>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>SCROLL DOWN</span>
+                <div class="arrow">↓</div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WORK -->
+        <section id="work" class="snap-section work-section">
+            <div class="section-container">
+                <header class="section-header">
+                    <h2><span class="underline-accent">PROYECTOS</span> DESTACADOS</h2>
+                </header>
+
+                <div class="project-grid">
+                    <!-- Cards -->
+                    <article class="project-card">
+                        <div class="card-image">
+                            <img src="./assets/showreel.png" alt="Project 1">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3>Documental Urbano</h3>
+                            <span class="tag">EDICIÓN + COLOR</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="card-image">
+                            <img src="./assets/commercial.png" alt="Project 2">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3>Campaña Moda 2024</h3>
+                            <span class="tag purple">VFX + EDICIÓN</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="card-image">
+                            <img src="./assets/music.png" alt="Project 3">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="card-info">
+                            <h3>Videoclip Musical</h3>
+                            <span class="tag">DIRECCIÓN + EDICIÓN</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CONTACT -->
+        <section id="contact" class="snap-section contact-section">
+            <div class="contact-wrapper">
+                <div class="contact-text">
+                    <h2>TRABAJEMOS <br> <span class="accent">JUNTOS</span></h2>
+                    <p>¿Tienes un proyecto en mente? Llevémoslo al siguiente nivel.</p>
+                    <div class="contact-buttons">
+                        <a href="mailto:contact@editor.pro" class="btn-primary">EMAIL ME</a>
+                        <a href="#" class="btn-outline">INSTAGRAM</a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="4" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">ENVIAR MENSAJE</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
