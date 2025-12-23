@@ -1,8 +1,3 @@
-/* 
-  ========================================
-  1. ROOT & RESET
-  ========================================
-*/
 :root {
   --bg-color: #0a0a0a;
   --bg-secondary: #111111;
@@ -40,18 +35,16 @@ body {
   2. LAYOUT UTILITIES
   ========================================
 */
+
 .snap-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  width: 100%;
+
 }
 
 .snap-section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  scroll-snap-align: start;
   position: relative;
-  overflow: hidden;
 }
 
 /* 
@@ -137,6 +130,28 @@ body {
 .nav-item:hover::after {
   width: 100%;
   left: 0;
+}
+
+/* Special Style (Soft Glow) */
+.nav-item[href="#contact"] {
+  color: white;
+  text-shadow: 0 0 10px rgba(41, 121, 255, 0.4);
+  animation: softGlow 3s infinite ease-in-out;
+  font-weight: 700;
+}
+
+@keyframes softGlow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(41, 121, 255, 0.4), 0 0 20px rgba(41, 121, 255, 0.2);
+    color: white;
+  }
+
+  50% {
+    text-shadow: 0 0 20px rgba(213, 0, 249, 0.6), 0 0 40px rgba(213, 0, 249, 0.4);
+    color: var(--accent-purple);
+  }
 }
 
 /* Header Actions / CTA */
@@ -239,7 +254,6 @@ body {
   animation-delay: 0.3s;
 }
 
-/* Active State (X Close) */
 .hamburger.open span:nth-child(1),
 .hamburger.open span:nth-child(4) {
   height: 0;
@@ -496,7 +510,7 @@ body {
 }
 
 .section-header h2 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 3rem;
 }
@@ -583,11 +597,106 @@ body {
   color: var(--accent-purple);
 }
 
-/* 
-  ========================================
-  8. CONTACT SECTION
+/*  ========================================
+  8. SKILLS SECTION (ARSENAL)
   ========================================
 */
+.skills-section {
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(41, 121, 255, 0.1);
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.skill-card p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+/* 
+  ========================================
+  9. REVIEWS SECTION (TESTIMONIALS)
+  ========================================
+*/
+.reviews-section {
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid var(--accent-purple);
+  padding: 2rem;
+  border-radius: 0 12px 12px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.author strong {
+  display: block;
+  font-size: 1rem;
+  color: white;
+}
+
+.author span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .contact-section {
   display: flex;
   align-items: center;
@@ -707,7 +816,69 @@ body {
 
 /* 
   ========================================
-  9. RESPONSIVE QUERIES
+  10. FOOTER
+  ========================================
+*/
+.site-footer {
+  padding: 3rem 2rem;
+  background: #050505;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: auto;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-family: var(--font-logo);
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.footer-brand p {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s;
+}
+
+.social-link:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* 
+  ========================================
+  11. RESPONSIVE QUERIES
   ========================================
 */
 @media (max-width: 1024px) {
@@ -752,7 +923,6 @@ body {
   /* Hero Adjustments */
   .hero-section {
     justify-content: flex-start;
-    /* Align to top */
     padding-top: var(--nav-height);
     flex-direction: column;
   }
@@ -761,13 +931,11 @@ body {
     font-size: 2.5rem;
   }
 
-  /* Carousel Stacked Logic */
   .carousel-container {
     position: relative;
     inset: auto;
     width: 100%;
     height: 45vh;
-    /* Occupy top half */
     z-index: 1;
     margin-bottom: 2rem;
     order: -1;
@@ -777,9 +945,7 @@ body {
     position: relative;
     z-index: 10;
     margin-bottom: auto;
-    /* Push remaining space */
     text-shadow: none;
-    /* Clean text for simple background */
   }
 
   /* Work Section Adjustments */
@@ -800,6 +966,21 @@ body {
     margin-bottom: 2rem;
   }
 
+  /* Skills & Reviews Mobile */
+  .skills-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skills-section,
+  .reviews-section {
+    padding: 4rem 1.5rem;
+    display: block;
+    overflow-y: auto;
+    text-align: center;
+  }
+
   /* Contact Section Adjustments */
   .contact-section {
     padding: 4rem 1.5rem;
@@ -810,5 +991,17 @@ body {
   .contact-form {
     padding: 1.5rem;
     width: 100%;
+  }
+
+  /* Footer Mobile */
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact-text h2 {
+    font-size: 2rem;
+    /* Reduce form 4rem to 2rem on mobile */
   }
 }
